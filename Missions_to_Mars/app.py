@@ -1,6 +1,7 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template, redirect 
 import scrape_mars
 import pymongo
+import os
 
 conn = 'mongodb://localhost:27017'
 client = pymongo.MongoClient(conn)
