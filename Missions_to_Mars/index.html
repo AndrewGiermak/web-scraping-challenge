@@ -33,25 +33,58 @@
             <div class="row">
                 <div class ="col-md-12">
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-8">
                     <h2 class="heading">Featured Mars Image</h2>
                     <img src="{{mars_dict.featured_image_url}}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image">>
                 </div>
-
 
 <!-- facts section -->
                 <div class="col-md-1">
                 </div>
                 <div class="row" style="padding-left: 10px;">
-                    <h2 class="header">Mars Facts</h2>
-                        <table>
-                            {{mars_dict.html_table|safe}}
-                        </table>
+                    <div class="col-md-3"></div>
+                        <h2 class="header">Mars Facts</h2>
+                            <table>
+                                {{mars_dict.html_table|safe}}
+                            </table>
                     </div>
                 </div>
             </div>
         </div>
 
+<!-- hemispheres section -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading">Mars Hemispheres</h2>
+                </div>
+                <div class="col-md-6">
+                    {% for x in mars_dict.hem_image_urls[0] %}
+                    <h4>{{x.title}}</h4>
+                    <img src="{{x.img_url}}">
+                    {% endfor %}
+
+                    {% for x in mars_dict.hem_image_urls[1] %}
+                    <h4>{{x.title}}</h4> 
+                    <img src="{{x.img_url}}">
+                    {% endfor %}
+                </div>
+                <div class="col-md-6">
+                    {% for x in mars_dict.hem_image_urls[2] %}
+                    <h4>{{x.title}}</h4> 
+                    <img src="{{x.img_url}}">
+                    {% endfor %}
+          
+                    {% for x in mars_dict.hem_image_urls[3] %}
+                    <h4>{{x.title}}</h4>
+                    <img src="{{x.img_url}}">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
 
 
 
