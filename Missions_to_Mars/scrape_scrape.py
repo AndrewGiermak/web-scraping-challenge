@@ -3,12 +3,11 @@ from flask_pymongo import PyMongo
 import scrape_mars
 from pymongo import MongoClient
 import pymongo
-import os
 
 # create an instance of Flask
 app = Flask(__name__)
 
-app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
+app.config["MONGO_URI"] = "mongodb://localhost:27017/mission_to_mars"
 mongo = PyMongo(app)
 
 # Create route that renders index.html template and finds documents from mongo
