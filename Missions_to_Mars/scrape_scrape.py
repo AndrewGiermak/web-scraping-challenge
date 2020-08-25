@@ -8,15 +8,12 @@ import os
 # create an instance of Flask
 app = Flask(__name__)
 
-# Use flask_pymongo to set up mongo connection locally 
 app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
 mongo = PyMongo(app)
 
 # Create route that renders index.html template and finds documents from mongo
 @app.route("/")
 def home(): 
-    # TEST, CHECKING FOR CONNECTION 
-    <h1>Mission To Mars - Welcome to the app</h>
     # find data in dict
     mars_dict = mongo.db.mars_dict.find_one()
     # Return template and data
@@ -41,3 +38,5 @@ def scrape():
 if __name__ == "__main__":
     app.run(debug=True)
 
+
+    
