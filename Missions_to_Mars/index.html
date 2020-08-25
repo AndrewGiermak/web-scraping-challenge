@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mission to Mars</title>
+  <link rel="icon" type="image" href="https://static01.nyt.com/images/2014/12/17/science/17mars-span/17mars-1418766578033-master1050.jpg">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<!-- welcome page with button to scrape data -->
+<body>
+    <body class="text-white" style="background-color:black;">
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1>Mission To Mars</h1>
+                <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Mars Data</a></p>
+            </div>
+        
+<!-- Latest Mars News Section  --> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading">Latest Mars News</h2>
+                    <b><h3 class="heading">{{mars_dict.news_title}}</h3></b>
+                    <b><h3 class="heading">{{mars_dict.news_date}}</h3></b>
+                    <h4>{{mars.paragraph_text}}</h4>
+        
+<!-- image section -->
+        <div class="container">
+            <div class="row">
+                <div class ="col-md-12">
+                </div>
+                <div class="col-md-5">
+                    <h2 class="heading">Featured Mars Image</h2>
+                    <img src="{{mars_dict.featured_image_url}}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image">>
+                </div>
+
+
+
+
+
+
+
+
