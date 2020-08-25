@@ -28,14 +28,16 @@ def scrape_news():
     soup = bs(html, 'html.parser')
 
     news_title = soup.find('div', class_= 'content_title').text
+    news_date = soup.find('div', class_= 'list_date').text
     paragraph_text = soup.find('div', class_='article_teaser_body').text
 
     # put in mars_dict
     mars_dict['news_title'] = news_title
+    mars_dict['news_date'] = news_date
     mars_dict['paragraph_text'] = paragraph_text
 
-    return mars_dict
     browser.quit()
+    return mars_dict
 
 # featured image
 def scrape_image():
@@ -52,8 +54,8 @@ def scrape_image():
 
     mars_dict['featured_image_url'] = featured_image_url
 
-    return mars_dict
     browser.quit()
+    return mars_dict
 
 # Mars Facts
 def scrape_facts():
@@ -69,8 +71,8 @@ def scrape_facts():
 
     mars_dict['html_table'] = html_table
 
-    return mars_dict
     browser.quit()
+    return mars_dict
 
 # Hemispheres
 def scrape_hemispheres():
@@ -94,8 +96,5 @@ def scrape_hemispheres():
 
     mars_dict['hem_image_urls'] = hem_image_urls
 
-    return mars_dict
     browser.quit()
-
-    # Return mars_dict 
     return mars_dict
