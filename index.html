@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<!-- welcome page with button to scrape data -->
+<body>
+    <body class="text-white" style="background-color:black;">
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1>Mission To Mars</h1>
+                <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Mars Data</a></p>
+            </div>
+        
+<!-- Latest Mars News Section  --> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading">Latest Mars News</h2>
+                    <b><h3 class="heading">{{mars_dict.news_title}}</h3></b>
+                    <b><h3 class="heading">{{mars_dict.news_date}}</h3></b>
+                    <h4>{{mars.paragraph_text}}</h4>
+        
+<!-- image section -->
+        <div class="container">
+            <div class="row">
+                <div class ="col-md-12">
+                </div>
+                <div class="col-md-8">
+                    <h2 class="heading">Featured Mars Image</h2>
+                    <img src="{{mars_dict.featured_image_url}}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image">>
+                </div>
+
+<!-- facts section -->
+                <div class="col-md-1">
+                </div>
+                <div class="row" style="padding-left: 10px;">
+                    <div class="col-md-3"></div>
+                        <h2 class="header">Mars Facts</h2>
+                            <table>
+                                {{mars_dict.html_table|safe}}
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- hemispheres section -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading">Mars Hemispheres</h2>
+                </div>
+                <div class="col-md-6">
+                    {% for x in mars_dict.hem_image_urls[0] %}
+                    <h4>{{x.title}}</h4>
+                    <img src="{{x.img_url}}">
+                    {% endfor %}
+
+                    {% for x in mars_dict.hem_image_urls[1] %}
+                    <h4>{{x.title}}</h4> 
+                    <img src="{{x.img_url}}">
+                    {% endfor %}
+                </div>
+                <div class="col-md-6">
+                    {% for x in mars_dict.hem_image_urls[2] %}
+                    <h4>{{x.title}}</h4> 
+                    <img src="{{x.img_url}}">
+                    {% endfor %}
+          
+                    {% for x in mars_dict.hem_image_urls[3] %}
+                    <h4>{{x.title}}</h4>
+                    <img src="{{x.img_url}}">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
