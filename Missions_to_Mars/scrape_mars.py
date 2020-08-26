@@ -39,7 +39,7 @@ def scrape_news():
 # featured image
 def scrape_image():
     browser = init_browser()
-    featured_image_url = '"https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
+    featured_image_url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
     browser.visit(featured_image_url)
     html_image = browser.html
     soup = bs(html_image, "html.parser")
